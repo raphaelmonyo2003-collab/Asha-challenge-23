@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asha Plan 23</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+  <div class="main-title">
+    <h1>Asha Plan 23 ✨</h1>
+    <p>Grow beautifully every single day 💖</p>
+  </div>
+
+  <div class="container">
+
+    <!-- CARD -->
+    <div class="card">
+
+      <h2>Body Weight </h2>
+
+      <div class="progress-circle">
+        <svg>
+          <circle cx="70" cy="70" r="60"></circle>
+          <circle cx="70" cy="70" r="60" class="progress" id="circle1"></circle>
+        </svg>
+
+        <div class="number" id="number1">65%</div>
+      </div>
+
+      <input type="range" min="0" max="100" value="65" id="slider1">
+
+    </div>
+
+    <!-- CARD -->
+    <div class="card">
+
+      <h2>Self Focus</h2>
+
+      <div class="progress-circle">
+        <svg>
+          <circle cx="70" cy="70" r="60"></circle>
+          <circle cx="70" cy="70" r="60" class="progress" id="circle2"></circle>
+        </svg>
+
+        <div class="number" id="number2">80%</div>
+      </div>
+
+      <input type="range" min="0" max="100" value="80" id="slider2">
+
+    </div>
+    <!-- CARD -->
+<div class="card">
+
+  <h2>Selfishness 💅</h2>
+
+  <div class="progress-circle">
+    <svg>
+      <circle cx="70" cy="70" r="60"></circle>
+      <circle cx="70" cy="70" r="60" class="progress" id="circle4"></circle>
+    </svg>
+
+    <div class="number" id="number4">21%</div>
+  </div>
+
+  <input type="range" min="0" max="100" value="21" id="slider4">
+
+</div>
+
+    <!-- CARD -->
+    <div class="card">
+
+      <h2>Net Worth</h2>
+
+      <div class="progress-circle">
+        <svg>
+          <circle cx="70" cy="70" r="60"></circle>
+          <circle cx="70" cy="70" r="60" class="progress" id="circle3"></circle>
+        </svg>
+
+        <div class="number" id="number3">10%</div>
+      </div>
+
+      <input type="range" min="0" max="100" value="10" id="slider3">
+
+    </div>
+
+ </div>
+
+<!-- NOTEBOOK SECTION -->
+
+<div class="notebook">
+
+  <h2>My Beautiful Goals 💕</h2>
+
+  <div class="goal-input">
+
+    <input type="text" id="goalText" placeholder="Write your dream or goal...">
+
+    <button onclick="addGoal()">Add</button>
+
+  </div>
+
+  <ul id="goalList"></ul>
+  <!-- NET WORTH GRAPH -->
+
+<div class="graph-box">
+
+  <h2>Net Worth Journey 📈</h2>
+
+  <div class="graph-inputs">
+
+    <input type="number" id="targetWorth" placeholder="Target Net Worth">
+
+    <input type="number" id="currentWorth" placeholder="Current Net Worth">
+
+    <button onclick="updateGraph()">Track</button>
+
+  </div>
+
+  <canvas id="worthChart"></canvas>
+
+</div>
+
+<!-- CHART JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</div>
+<!-- DAILY TRACKER -->
+
+<div class="graph-box">
+
+    <h2>Daily Status Tracker 💕</h2>
+
+    <div class="graph-inputs">
+
+        <select id="trackType">
+            <option value="Body Weight">Body Weight</option>
+            <option value="Self Focus">Self Focus</option>
+            <option value="Selfishness">Selfishness</option>
+            <option value="Net Worth">Net Worth</option>
+        </select>
+
+        <input type="number" id="trackValue" placeholder="Enter percentage/value">
+
+        <input type="date" id="trackDate">
+
+        <button onclick="saveTracking()">Save Status</button>
+
+    </div>
+
+    <canvas id="dailyChart"></canvas>
+
+    <div class="history-box">
+        <h3>Your Journey 🌸</h3>
+        <ul id="historyList"></ul>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

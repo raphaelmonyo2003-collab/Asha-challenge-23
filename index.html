@@ -10,11 +10,34 @@
     
 
   <div class="main-title">
-    <h1>Asha Plan 23 ✨</h1>
+    <h1>Asha challenge ✨</h1>
     <p>Grow beautifully every single day 💖</p>
   </div>
 
   <div class="container">
+    <!-- CARD -->
+<div class="card">
+
+    <h2>Balance ⚖️</h2>
+
+    <div class="progress-circle">
+        <svg>
+            <circle cx="70" cy="70" r="60"></circle>
+            <circle cx="70" cy="70" r="60"
+                class="progress"
+                id="circle5"></circle>
+        </svg>
+
+        <div class="number" id="number5">50%</div>
+    </div>
+
+    <input type="range"
+           min="0"
+           max="100"
+           value="50"
+           id="slider5">
+
+</div>
 
     <!-- CARD -->
     <div class="card">
@@ -138,11 +161,12 @@
     <div class="graph-inputs">
 
         <select id="trackType">
-            <option value="Body Weight">Body Weight</option>
-            <option value="Self Focus">Self Focus</option>
-            <option value="Selfishness">Selfishness</option>
-            <option value="Net Worth">Net Worth</option>
-        </select>
+    <option value="Balance">Balance</option>
+    <option value="Body Weight">Body Weight</option>
+    <option value="Self Focus">Self Focus</option>
+    <option value="Selfishness">Selfishness</option>
+    <option value="Net Worth">Net Worth</option>
+</select>
 
         <input type="number" id="trackValue" placeholder="Enter percentage/value">
 

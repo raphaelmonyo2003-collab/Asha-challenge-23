@@ -433,3 +433,13 @@ input[type="range"]{
 .popup-menu button:hover{
     background:#fff1f2;
 }
+#circle5{
+    stroke:#8b5cf6;
+}
+
+#number5{
+    color:#8b5cf6;
+}
+.popup-menu button:hover{
+    background:#fff1f2;
+}

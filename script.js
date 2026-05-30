@@ -37,6 +37,7 @@ updateProgress("slider1","circle1","number1");
 updateProgress("slider2","circle2","number2");
 updateProgress("slider3","circle3","number3");
 updateProgress("slider4","circle4","number4");
+updateProgress("slider5","circle5","number5");
 /* GOAL NOTEBOOK */
 
 const goalInput = document.getElementById("goalText");
@@ -241,20 +242,24 @@ function saveTracking(){
     /* AUTO UPDATE TOP CARDS */
 
     if(type === "Body Weight"){
-        updateCard("slider1","circle1","number1",value);
-    }
+    updateCard("slider1","circle1","number1",value);
+}
 
-    if(type === "Self Focus"){
-        updateCard("slider2","circle2","number2",value);
-    }
+if(type === "Self Focus"){
+    updateCard("slider2","circle2","number2",value);
+}
 
-    if(type === "Net Worth"){
-        updateCard("slider3","circle3","number3",value);
-    }
+if(type === "Net Worth"){
+    updateCard("slider3","circle3","number3",value);
+}
 
-    if(type === "Selfishness"){
-        updateCard("slider4","circle4","number4",value);
-    }
+if(type === "Selfishness"){
+    updateCard("slider4","circle4","number4",value);
+}
+
+if(type === "Balance"){
+    updateCard("slider5","circle5","number5",value);
+}
 
 }
 
@@ -367,5 +372,41 @@ function toggleMenu(index, btn){
             menu.style.display = "none";
             document.removeEventListener("click", closeMenu);
         }
+    });
+}
+function updateProgress(sliderId, circleId, numberId){
+
+    const slider = document.getElementById(sliderId);
+    const circle = document.getElementById(circleId);
+    const number = document.getElementById(numberId);
+
+    if(!slider || !circle || !number){
+        console.error("Missing element:", sliderId, circleId, numberId);
+        return;
+    }
+
+    const radius = 60;
+    const circumference = 2 * Math.PI * radius;
+
+    circle.style.strokeDasharray = circumference;
+
+    function setProgress(value){
+        const offset = circumference - (value / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+        number.innerHTML = value + "%";
+        localStorage.setItem(sliderId, value);
+    }
+
+    const saved = localStorage.getItem(sliderId);
+
+    if(saved){
+        slider.value = saved;
+        setProgress(saved);
+    }else{
+        setProgress(slider.value);
+    }
+
+    slider.addEventListener("input", () => {
+        setProgress(slider.value);
     });
 }
